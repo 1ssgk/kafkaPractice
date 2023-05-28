@@ -1,0 +1,21 @@
+spring:
+  # Kafka
+  kafka:
+    # Consumer 설정
+    consumer:
+      # Kafka Broker 서버
+      bootstrap-servers: localhost:9092
+      # 해당 Consumer 소비 그룹 ID
+      group-id: foo
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    # Producer 설정
+    producer:
+      # Kafka Broker 서버
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+  port: 8888
